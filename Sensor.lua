@@ -82,7 +82,7 @@ function M.run()
 
   uart.setup(0,9600,8,0,1,0)
 
-  tmr.create():register(5000, tmr.ALARM_AUTO, function()
+  tmr.alarm(0,5000, tmr.ALARM_AUTO, function()
     uart.write(0,0x42,0x4D,0xAB,0x00,0x00,0x01,0x3A);
   end)
 

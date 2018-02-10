@@ -23,15 +23,21 @@
 - [乐为物联教程](https://www.kancloud.cn/lewei50/lewei50-usermanual/380598)
 
 
-## 未实现的功能
+## 已经实现功能
 
 - 掉电重启后能保存住配置好的wifi的ssid和passwd，乐为物联的gateWay和uesrKey，不需要重新配置，既可以继续工作   
 
-- 长按reset键，能重置
+- 按flash键，能重置
+
+## 未实现的功能
+
+
+- 每3min采样传感器，其余时间让传感器休眠
 
 ## 文件列表
 
 - `init.lua`  nodemcu入口
+- `ConfigWeb.lua` 网页配置wifi和乐为物联的网关和userkey
 - `Sensor.lua` 与PTQS1005串口通信，并定时调用LeweiMqtt上传传感器信息
 - `LeweiMqtt.lua`  连接乐为物联上传传感器信息 [参考github工程](https://github.com/lewei50/NodeMCU-AirMonitor) 
 - `telent_srv.lua` 可以通过`luatool.py`上传`lua`代码到`nodemcu`
