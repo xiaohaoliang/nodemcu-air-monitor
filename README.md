@@ -1,8 +1,18 @@
 
 # TODO 未完成
 
+1. `写code坑点`研究下
+
 # AirMonitor
 该项目用于NodeMCU和攀藤的PTQS1005传感器(PM2.5，TVOC，甲醛，CO2，温度和湿度)网页显示和连接乐为物联显示的简单实例
+
+## 写code坑点
+- [虽然串口有`0`和`1`两个，但是`1`串口不能接收数据](https://nodemcu.readthedocs.io/en/master/en/modules/uart/#uartsetup)
+    - 当`0`被使用时，`1`串口能否被`print`函数使用做debug？
+
+- 要考虑程序突然异常挂了，重启后能连接wifi和服务，所以要保存wifi的ssid和passwd等到flash上
+
+- flash按键删除wifi的ssid和passwd等其他信息可以重置wifi或者服务
 
 ## 使用教程
 
@@ -13,15 +23,21 @@
 - [乐为物联教程](https://www.kancloud.cn/lewei50/lewei50-usermanual/380598)
 
 
-## 未实现的功能
+## 已经实现功能
 
 - 掉电重启后能保存住配置好的wifi的ssid和passwd，乐为物联的gateWay和uesrKey，不需要重新配置，既可以继续工作   
 
-- 长按reset键，能重置
+- 按flash键，能重置
+
+## 未实现的功能
+
+
+- 每3min采样传感器，其余时间让传感器休眠
 
 ## 文件列表
 
 - `init.lua`  nodemcu入口
+- `ConfigWeb.lua` 网页配置wifi和乐为物联的网关和userkey
 - `Sensor.lua` 与PTQS1005串口通信，并定时调用LeweiMqtt上传传感器信息
 - `LeweiMqtt.lua`  连接乐为物联上传传感器信息 [参考github工程](https://github.com/lewei50/NodeMCU-AirMonitor) 
 - `telent_srv.lua` 可以通过`luatool.py`上传`lua`代码到`nodemcu`
