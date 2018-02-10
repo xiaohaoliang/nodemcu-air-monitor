@@ -1,8 +1,3 @@
-
-# TODO 未完成
-
-1. `写code坑点`研究下
-
 # AirMonitor
 该项目用于NodeMCU和攀藤的PTQS1005传感器(PM2.5，TVOC，甲醛，CO2，温度和湿度)网页显示和连接乐为物联显示的简单实例
 
