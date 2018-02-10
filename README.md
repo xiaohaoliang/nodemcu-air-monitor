@@ -27,4 +27,4 @@
 - `luatool.py` 使用TCP/IP的方式上传代码到nodeMCU: [github原工程](https://github.com/4refr0nt/luatool) 
 `wget https://raw.githubusercontent.com/4refr0nt/luatool/master/luatool/luatool.py` 使用该命令下载`luatool.py`到本地
 
-## [nodemcu的简易介绍与使用]((https://xiaohaoliang.github.io/2018/01/29/nodemcu%E5%B0%9D%E8%AF%95/))
+## [nodemcu的简易介绍与使用](https://xiaohaoliang.github.io/2018/01/29/nodemcu%E5%B0%9D%E8%AF%95/)
